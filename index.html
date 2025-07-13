@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tools VIP Yodobashi - TRUVN</title>
+        <link rel="stylesheet" href="./css/index.css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class="h-screen flex flex-col justify-between">
+        <div class="w-full h-full">
+            <h1 class="w-full text-center py-1 bg-gray-800 text-white">
+                Tool VIP Yodobashi AUTO
+            </h1>
+            <section
+                id="formInputLinkMuaHang"
+                class="grid h-fit gap-4 grid-cols-2 mx-auto w-screen max-w-screen-xl py-5 px-4 sm:px-6 lg:px-8"
+            >
+                <div>
+                    <h2 class="font-bold text-indigo-800 mb-5">
+                        Nhập link mua hàng
+                    </h2>
+
+                    <label for="linksanpham">
+                        <input
+                            type="linksanpham"
+                            id="linksanpham"
+                            class="mt-0.5 w-full px-4 py-2 rounded border-gray-300 shadow-sm shadow-indigo-600 sm:text-sm outline-none"
+                            placeholder="Nhập link mua hàng"
+                        />
+                    </label>
+                    <button
+                        id="btnThemSanPham"
+                        class="w-full mt-2 bg-indigo-800 text-white p-1 rounded-full cursor-pointer hover:bg-indigo-600"
+                    >
+                        Thêm sản phẩm
+                    </button>
+                </div>
+                <div
+                    class="h-fit bg-indigo-800 text-white p-2 rounded-md flex flex-col"
+                >
+                    <h2 class="font-bold">Danh sách sản phẩm và tiến trình</h2>
+                    <div
+                        id="formInputLinkMuaHang_lists"
+                        class="w-full h-fit overflow-hidden grid grid-cols-1 xl:grid-cols-2 gap-1 overflow-x-auto py-2"
+                    ></div>
+                </div>
+            </section>
+            <section
+                id="MAIN"
+                class="flex flex-col gap-2 h-fit mx-auto w-screen max-w-screen-xl py-5 px-4 sm:px-6 lg:px-8"
+            >
+                <div class="item">
+                    <label
+                        for="thoiGianHen"
+                        class="block text-base font-medium text-gray-700 mb-1"
+                    >
+                        Chọn ngày và giờ hẹn:
+                    </label>
+                    <input
+                        type="datetime-local"
+                        id="thoiGianHen"
+                        name="thoiGianHen"
+                        class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <div class="item">
+                    <label
+                        for="thoiGianHen"
+                        class="block text-base font-medium text-gray-700 mb-1"
+                    >
+                        Tự đông mua sau
+                    </label>
+                    <p id="thoiGianMuaCountDown" class="text-center text-red-800 font-bold">00:00</p>
+                </div>
+                <div class="item">
+                    <label
+                        for="soLuongMua"
+                        class="block text-base font-medium text-gray-700 mb-1"
+                    >
+                        Số lượng mua:
+                    </label>
+                    <input
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                        type="number"
+                        value="1"
+                        min="1"
+                        id="soLuongMua"
+                        name="soLuongMua"
+                        class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <div class="item">
+                    <p>Nhập danh sách tài khoản</p>
+                    <div class="flex flex-col">
+                        <label for="taiKhoan">
+                            <span class="text-sm font-medium text-gray-700">
+                                Tài khoản
+                            </span>
+                            <input
+                                type="text"
+                                id="taiKhoan"
+                                placeholder="Nhập tài khoản"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            />
+                        </label>
+                        <label for="matKhau">
+                            <span class="text-sm font-medium text-gray-700">
+                                Mật khẩu
+                            </span>
+                            <input
+                                type="password"
+                                placeholder="Nhập mật khẩu"
+                                id="matKhau"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer
+            class="w-full grid-cols-2 border-t-2 border-indigo-800 p-2 bg-white"
+        >
+            <button
+                id="btnBatDau"
+                class="w-full bg-indigo-800 text-white p-1 rounded-full cursor-pointer hover:bg-indigo-600"
+            >
+                Bắt đầu chạy
+            </button>
+        </footer>
+        <script type="module" src="./js/index.js"></script>
+    </body>
+</html>
